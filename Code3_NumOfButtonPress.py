@@ -11,7 +11,7 @@ while True:
     pb2_val = pb2.value()
     
     
-    if pb1_val == 0 and count == 0:
+    if pb2_val == 0 and count == 0:
         start = time.ticks_ms()
         count = count + 1
         time.sleep(0.2)
@@ -19,11 +19,11 @@ while True:
     elif pb2_val == 0:
         if count > 0:
             count = count + 1
-            print(count)
+            print(count - 1)
             time.sleep(0.2)
         
     if start is not None and time.ticks_diff(time.ticks_ms(), start) >= 5000:
-        print("Final Count:", count)
+        print("Final Count:", count-1)
         count = 0
         start = None
         print("Resetting...")
